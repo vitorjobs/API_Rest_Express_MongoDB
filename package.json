@@ -1,0 +1,24 @@
+{
+  "name": "API_Rest_Express_MongoDB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorjobs/API_Rest_Express_MongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorjobs/API_Rest_Express_MongoDB/issues"
+  },
+  "homepage": "https://github.com/vitorjobs/API_Rest_Express_MongoDB#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
