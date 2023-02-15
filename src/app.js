@@ -16,6 +16,12 @@ app.get('/livros', (req, res) => {
   res.status(200).json(livros)
 })
 
+app.get('/livros/:id', (req, res) => {
+  // buscar conteúdo do ARRAY
+  let index = buscaLivro(req.params.id)
+  res.status(200).json(livros[index])
+})
+
 app.post('/livros', (req, res) => {
   // Enviar para o Array o conteúdo que vier no body
   livros.push(req.body)
