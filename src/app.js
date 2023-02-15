@@ -35,6 +35,14 @@ app.put('/livros/:id', (req, res) => {
   res.status(201).json(livros)
 })
 
+app.delete('/livros/:id', (req, res) => {
+  // Deletar conteúdo do ARRAY
+  let {id} = req.params
+  let index = buscaLivro(id)
+  livros.splice(index, 1)
+  res.send(`Livro ${id} removido com sucesso`)
+})
+
 // Buscar elementos no array
 
 function buscaLivro(id){
