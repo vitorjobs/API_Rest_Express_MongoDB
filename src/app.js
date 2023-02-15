@@ -4,8 +4,8 @@ const app = express()
 app.use(express.json())
 
 const livros = [
-  {id: 1, "Titulo": "Senhor dos aneis"},
-  {id: 2, "Titulo": "Senhor"},
+  {id: 1, "titulo": "Senhor dos aneis"},
+  {id: 2, "titulo": "Senhor"},
 ]
 
 app.get('/', (req, res) =>{
@@ -21,5 +21,20 @@ app.post('/livros', (req, res) => {
   livros.push(req.body)
   res.status(201).send("Livro Cadastrado com Sucesso")
 })
+
+app.put('/livros/:id', (req, res) => {
+  // Atualizar conteúdo do ARRAY
+  let index = buscaLivro(req.params.id)
+  livros[index].titulo = req.body.titulo
+  res.status(201).json(livros)
+})
+
+// Buscar elementos no array
+
+function buscaLivro(id){
+  // findeIndex para buscar dentro do array
+  // Verifica se o ID encontrado no array livros é o mesmo ID que foi passado no parâmetro.
+  return livros.findIndex(livro=> livro.id == id)
+}
 
 export default app
